@@ -1,8 +1,13 @@
+# Project Title - fund_withdraw.py (fundMe)
+# Project completed by niy42
+
+# import necessary packages from brownie and current directory
 from brownie import fundMe
 from scripts.helpful import get_account
 import time
 
 
+# function to fund a contract
 def fund():
     account = get_account()
     _fundMe = fundMe[-1]
@@ -14,6 +19,7 @@ def fund():
     time.sleep(1)
 
 
+# function to withdraw funds from a contract
 def withdraw():
     account = get_account()
     _fundMe = fundMe[-1]
@@ -22,6 +28,7 @@ def withdraw():
     time.sleep(1)
 
 
+# main - calls fund and withdraw functions
 def main():
     fund()
     withdraw()
