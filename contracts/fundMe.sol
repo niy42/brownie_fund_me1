@@ -1,9 +1,15 @@
-// Project Title: fundMe.sol
-// Project completed by niy42
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
 import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
+
+/**
+ * @title fundMe.sol
+ * @notice project completed by niy42
+ * @notice the fundMe contract contains fundme and withdraw functions,
+ * which are mostly the required functions
+ * and other needed functions are listed too.
+ */
 
 // contract fundMe
 contract fundMe is ReentrancyGuard {
