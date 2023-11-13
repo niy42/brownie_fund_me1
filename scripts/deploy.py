@@ -1,15 +1,20 @@
+# Project Title - deploy.py (fundMe)
+# Project completed by niy42
+
+# importing neccessary packages
 from brownie import fundMe, MockV3Aggregator, network, config
 from scripts.helpful import get_account, deploy_mocks, LBEnvs
 from brownie.network.gas.strategies import ExponentialScalingStrategy
 from brownie.network.gas.strategies import LinearScalingStrategy
 
 # gas strategies dynamically generates a gas price for a transaction
-# there a basically two types based on time scaling strategy
-# choice of gas strategy depends on amount of transaction waiting time
+# there are two types based on time scaling strategy
+# your choice of gas strategy might depend on waiting time
 gas_strategy = ExponentialScalingStrategy("10 gwei", "50 gwei")
 gas_strategy1 = LinearScalingStrategy("10 gwei", "50 gwei", 1.1)
 
 
+# deploys fundMe contract
 def deploy_fundMe():
     account = get_account()
     if network.show_active() not in LBEnvs:
@@ -27,5 +32,9 @@ def deploy_fundMe():
     return _fundMe
 
 
+# main calls deploy_fundMe function
 def main():
     deploy_fundMe()
+
+
+# Note - brownie works with compiled JSON files.
